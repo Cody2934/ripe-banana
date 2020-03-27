@@ -4,9 +4,7 @@ const {
   getFilm, 
   getFilms, 
   getActor,
-  // getActors,
   getStudio,
-  // getStudios 
 } = require('../db/data-helpers');
 
 describe('film routes', () => {
@@ -47,7 +45,7 @@ describe('film routes', () => {
       });
   });
 
-  it('gets all reviewers', async() => {
+  it('gets all films', async() => {
     const films = await getFilms();
     return request(app)
       .get('/api/v1/films')
@@ -56,7 +54,7 @@ describe('film routes', () => {
       });
   });
 
-  it('deletes a reviewer by id', async() => {
+  it('deletes a film by id', async() => {
     const film = await getFilm();
     return request(app)
       .delete(`/api/v1/films/${film._id}`)

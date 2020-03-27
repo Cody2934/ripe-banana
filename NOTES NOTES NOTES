@@ -1,3 +1,5 @@
-WORK VERTICALLY
+delete a reviewer only if no reviews
 
-REVIEW Models first at they don't depend on other resources
+return top 100 reviews
+
+.toEqual(Array(100).map(element => {the particular object you're expecting}))

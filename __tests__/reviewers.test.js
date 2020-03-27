@@ -1,6 +1,7 @@
 const request = require('supertest');
 const app = require('../lib/app');
 const { getReviewer, getReviewers } = require('../db/data-helpers');
+const Review = require('../lib/models/Review');
 
 
 describe('reviewer routes', () => {
@@ -57,8 +58,24 @@ describe('reviewer routes', () => {
     return request(app)
       .delete(`/api/v1/reviewers/${reviewer._id}`)
       .then(res => {
-        expect(res.body).toEqual(reviewer);
+        expect(res.body).toEqual({});
       });
   });
 
+  it('cannot delete reviewer if reviews present', async() => {
+    const reviewer = await getReviewer();
+    console.log('!!!!!!!!', reviewer);
+    await Review.create({ 
+      reviewerId: reviewer._id, 
+      rating: 5,
+      review: {
+        reviewText: 'this movie was amazeballs' 
+      } 
+    });
+    return request(app)
+      .delete(`/api/v1/reviewers/${reviewer._id}`) 
+      .then(res => {
+        expect(res.body).toEqual('Cant touch this');
+      });
+  });
 });
