@@ -1,5 +1,0 @@
-delete a reviewer only if no reviews
-
-return top 100 reviews
-
-.toEqual(Array(100).map(element => {the particular object you're expecting}))
