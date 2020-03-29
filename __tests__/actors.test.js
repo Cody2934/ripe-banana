@@ -2,7 +2,6 @@ const request = require('supertest');
 const app = require('../lib/app');
 const { getActor, getActors } = require('../db/data-helpers');
 
-
 describe('actor routes', () => {
   it('creates an actor', () => {
     return request(app)

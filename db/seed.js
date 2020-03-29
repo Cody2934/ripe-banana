@@ -3,11 +3,9 @@ const Studio = require('../lib/models/Studio');
 const Actor = require('../lib/models/Actor');
 const Film = require('../lib/models/Film');
 const Review = require('../lib/models/Review');
-
 const Reviewer = require('../lib/models/Reviewer');
 
 module.exports = async({ studiosToCreate = 5, actorsToCreate = 5, reviewersToCreate = 5, filmsToCreate = 5, reviewsToCreate = 101 } = {}) => {
-
   const studios = await Studio.create([...Array(studiosToCreate)].map(() => ({
     name: `${chance.animal()}`,
     address: {
@@ -46,4 +44,5 @@ module.exports = async({ studiosToCreate = 5, actorsToCreate = 5, reviewersToCre
       reviewText: chance.sentence()
     }
   })));
+  
 };

@@ -168,9 +168,7 @@ describe('review routes', () => {
           { _id: expect.any(String), rating: expect.any(Number), reviewerId: expect.any(String), filmId: expect.any(String), review: { reviewText: expect.any(String) }, __v: 0 },
           { _id: expect.any(String), rating: expect.any(Number), reviewerId: expect.any(String), filmId: expect.any(String), review: { reviewText: expect.any(String) }, __v: 0 },
           { _id: expect.any(String), rating: expect.any(Number), reviewerId: expect.any(String), filmId: expect.any(String), review: { reviewText: expect.any(String) }, __v: 0 },
-
         ]);
       });
   });
-
 });

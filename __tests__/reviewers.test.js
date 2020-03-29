@@ -4,8 +4,6 @@ const { getReviewer, getReviewers } = require('../db/data-helpers');
 const Review = require('../lib/models/Review');
 const Reviewer = require('../lib/models/Reviewer');
 
-
-
 describe('reviewer routes', () => {
   it('creates a reviewer', () => {
     return request(app)

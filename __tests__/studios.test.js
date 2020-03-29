@@ -2,7 +2,6 @@ const request = require('supertest');
 const app = require('../lib/app');
 const { getStudio, getStudios } = require('../db/data-helpers');
 
-
 describe('studio routes', () => {
   it('creates a studio', () => {
     return request(app)
@@ -68,5 +67,4 @@ describe('studio routes', () => {
         expect(res.body).toEqual(studio);
       });
   });
-
 });
